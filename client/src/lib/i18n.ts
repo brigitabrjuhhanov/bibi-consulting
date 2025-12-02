@@ -38,7 +38,7 @@ export const translations = {
     about: {
       title: 'About BiBi Consulting',
       subtitle: 'Trust & Expertise',
-      desc: 'We are a mother-daughter team with a shared passion for helping businesses succeed. Our combined experience in accounting and digital innovation allows us to offer a unique and comprehensive consulting service.',
+      desc: 'We are a strategic partnership with a shared passion for helping businesses succeed. Our combined experience in accounting and digital innovation allows us to offer a unique and comprehensive consulting service.',
       values: {
         clarity: 'Clarity',
         trust: 'Trust',
@@ -96,7 +96,7 @@ export const translations = {
     about: {
       title: 'BiBi Consultingust',
       subtitle: 'Usaldus ja Asjatundlikkus',
-      desc: 'Oleme ema ja tütre meeskond, kellel on ühine kirg aidata ettevõtetel edu saavutada. Meie kombineeritud kogemus raamatupidamises ja digitaalses innovatsioonis võimaldab meil pakkuda ainulaadset ja laiaulatuslikku nõustamisteenust.',
+      desc: 'Oleme strateegiline partnerlus, kellel on ühine kirg aidata ettevõtetel edu saavutada. Meie kombineeritud kogemus raamatupidamises ja digitaalses innovatsioonis võimaldab meil pakkuda ainulaadset ja laiaulatuslikku nõustamisteenust.',
       values: {
         clarity: 'Selgus',
         trust: 'Usaldus',
