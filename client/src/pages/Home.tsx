@@ -112,8 +112,7 @@ export default function Home() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {/* Service 1 */}
-            <Link href="/services">
-              <a className="group block h-full">
+            <Link href="/services" className="group block h-full">
                 <Card className="h-full border-border/40 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-[#F8F8F8]">
                   <CardHeader>
                     <div className="h-12 w-12 rounded-lg bg-white border border-border/50 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -132,12 +131,10 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
             </Link>
 
             {/* Service 2 */}
-            <Link href="/services">
-              <a className="group block h-full">
+            <Link href="/services" className="group block h-full">
                 <Card className="h-full border-border/40 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-[#F8F8F8]">
                   <CardHeader>
                     <div className="h-12 w-12 rounded-lg bg-white border border-border/50 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -156,12 +153,10 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
             </Link>
 
             {/* Service 3 */}
-            <Link href="/services">
-              <a className="group block h-full">
+            <Link href="/services" className="group block h-full">
                 <Card className="h-full border-border/40 hover:border-primary/20 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 bg-[#F8F8F8]">
                   <CardHeader>
                     <div className="h-12 w-12 rounded-lg bg-white border border-border/50 flex items-center justify-center text-primary mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
@@ -180,7 +175,6 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
-              </a>
             </Link>
           </div>
         </div>

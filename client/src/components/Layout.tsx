@@ -24,23 +24,23 @@ export function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border/40">
       <div className="container flex items-center justify-between h-20">
-        <Link href="/">
-          <a className="flex items-center gap-3 group">
+        <Link href="/" className="flex items-center gap-3 group">
             <img src="/images/bibi_logo.png" alt="BiBi Consulting" className="h-10 w-10 object-contain transition-transform group-hover:scale-105" />
             <span className="font-serif text-xl font-medium tracking-tight text-primary">BiBi Consulting</span>
-          </a>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a className={cn(
+            <Link 
+              key={item.href} 
+              href={item.href}
+              className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
                 location === item.href ? "text-primary" : "text-muted-foreground"
-              )}>
-                {item.label}
-              </a>
+              )}
+            >
+              {item.label}
             </Link>
           ))}
           <Button 
@@ -66,16 +66,16 @@ export function Header() {
       {isMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}>
-              <a 
-                className={cn(
-                  "text-lg font-medium py-2 px-4 rounded-md transition-colors",
-                  location === item.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
-                )}
-                onClick={() => setIsMenuOpen(false)}
-              >
-                {item.label}
-              </a>
+            <Link 
+              key={item.href} 
+              href={item.href}
+              className={cn(
+                "text-lg font-medium py-2 px-4 rounded-md transition-colors",
+                location === item.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
+              )}
+              onClick={() => setIsMenuOpen(false)}
+            >
+              {item.label}
             </Link>
           ))}
           <Button 
