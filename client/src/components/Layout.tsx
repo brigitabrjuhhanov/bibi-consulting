@@ -25,7 +25,7 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border/40">
       <div className="container flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">
-            <img src="/images/bibi_logo.png" alt="BiBi Consulting" className="h-10 w-10 object-contain transition-transform group-hover:scale-105" />
+            <img src="/images/bibi_logo_high_res.png" alt="BiBi Consulting" className="h-10 w-10 object-contain transition-transform group-hover:scale-105" style={{ imageRendering: "auto" }} />
             <span className="font-serif text-xl font-medium tracking-tight text-primary">BiBi Consulting</span>
         </Link>
 
@@ -102,7 +102,7 @@ export function Footer() {
       <div className="container grid md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/images/bibi_logo.png" alt="BiBi Consulting" className="h-8 w-8 object-contain" />
+            <img src="/images/bibi_logo_high_res.png" alt="BiBi Consulting" className="h-8 w-8 object-contain" style={{ imageRendering: "auto" }} />
             <span className="font-serif text-lg font-medium text-primary">BiBi Consulting</span>
           </div>
           <p className="text-muted-foreground max-w-xs">
