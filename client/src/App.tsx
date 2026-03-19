@@ -6,6 +6,7 @@ import Contact from "@/pages/Contact";
 import Home from "@/pages/Home";
 import NotFound from "@/pages/NotFound";
 import Services from "@/pages/Services";
+import { Analytics } from "@vercel/analytics/react";
 import { useEffect } from "react";
 import { Route, Switch, useLocation } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
@@ -41,7 +42,9 @@ function SEO() {
     }
 
     document.title = title;
-    document.querySelector('meta[name="description"]')?.setAttribute("content", description);
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", description);
     document.documentElement.lang = language;
   }, [location, t, language]);
 
@@ -68,6 +71,7 @@ function App() {
           <SEO />
           <Toaster />
           <Router />
+          <Analytics />
         </TooltipProvider>
       </ThemeProvider>
     </ErrorBoundary>

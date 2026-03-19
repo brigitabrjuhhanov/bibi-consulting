@@ -11,7 +11,7 @@ export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleLanguage = () => {
-    setLanguage(language === 'en' ? 'et' : 'en');
+    setLanguage(language === "en" ? "et" : "en");
   };
 
   const navItems = [
@@ -25,27 +25,36 @@ export function Header() {
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-border/40">
       <div className="container flex items-center justify-between h-20">
         <Link href="/" className="flex items-center gap-3 group">
-            <img src="/images/bibi_logo_high_res.png" alt="BiBi Consulting" className="h-10 w-10 object-contain transition-transform group-hover:scale-105" style={{ imageRendering: "auto" }} />
-            <span className="font-serif text-xl font-medium tracking-tight text-primary">BiBi Consulting</span>
+          <img
+            src="/images/bibi_logo_high_res.png"
+            alt="BiBi Consulting"
+            className="h-10 w-10 object-contain transition-transform group-hover:scale-105"
+            style={{ imageRendering: "auto" }}
+          />
+          <span className="font-serif text-xl font-medium tracking-tight text-primary">
+            BiBi Consulting
+          </span>
         </Link>
 
         {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
-          {navItems.map((item) => (
-            <Link 
-              key={item.href} 
+          {navItems.map(item => (
+            <Link
+              key={item.href}
               href={item.href}
               className={cn(
                 "text-sm font-medium transition-colors hover:text-primary",
-                location === item.href ? "text-primary" : "text-muted-foreground"
+                location === item.href
+                  ? "text-primary"
+                  : "text-muted-foreground"
               )}
             >
               {item.label}
             </Link>
           ))}
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             onClick={toggleLanguage}
             className="ml-4 font-medium border-primary/20 hover:bg-primary/5 hover:text-primary"
           >
@@ -54,7 +63,7 @@ export function Header() {
         </nav>
 
         {/* Mobile Menu Toggle */}
-        <button 
+        <button
           className="md:hidden p-2 text-foreground"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
@@ -65,21 +74,23 @@ export function Header() {
       {/* Mobile Nav */}
       {isMenuOpen && (
         <div className="md:hidden absolute top-20 left-0 right-0 bg-background border-b border-border p-4 flex flex-col gap-4 shadow-lg animate-in slide-in-from-top-5">
-          {navItems.map((item) => (
-            <Link 
-              key={item.href} 
+          {navItems.map(item => (
+            <Link
+              key={item.href}
               href={item.href}
               className={cn(
                 "text-lg font-medium py-2 px-4 rounded-md transition-colors",
-                location === item.href ? "bg-primary/10 text-primary" : "text-foreground hover:bg-muted"
+                location === item.href
+                  ? "bg-primary/10 text-primary"
+                  : "text-foreground hover:bg-muted"
               )}
               onClick={() => setIsMenuOpen(false)}
             >
               {item.label}
             </Link>
           ))}
-          <Button 
-            variant="outline" 
+          <Button
+            variant="outline"
             className="w-full justify-center mt-2"
             onClick={() => {
               toggleLanguage();
@@ -96,32 +107,40 @@ export function Header() {
 
 export function Footer() {
   const { t } = useLanguage();
-  
+
   return (
     <footer className="bg-white border-t border-border/40 py-12 mt-auto">
       <div className="container grid md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
-            <img src="/images/bibi_logo_high_res.png" alt="BiBi Consulting" className="h-8 w-8 object-contain" style={{ imageRendering: "auto" }} />
-            <span className="font-serif text-lg font-medium text-primary">BiBi Consulting</span>
+            <img
+              src="/images/bibi_logo_high_res.png"
+              alt="BiBi Consulting"
+              className="h-8 w-8 object-contain"
+              style={{ imageRendering: "auto" }}
+            />
+            <span className="font-serif text-lg font-medium text-primary">
+              BiBi Consulting
+            </span>
           </div>
-          <p className="text-muted-foreground max-w-xs">
-            {t.hero.subtitle}
-          </p>
+          <p className="text-muted-foreground max-w-xs">{t.hero.subtitle}</p>
         </div>
-        
+
         <div>
           <h4 className="font-serif font-medium mb-4">{t.nav.contact}</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li>
-              <a href={`mailto:${t.contact.email}`} className="hover:text-primary transition-colors">
+              <a
+                href={`mailto:${t.contact.email}`}
+                className="hover:text-primary transition-colors"
+              >
                 {t.contact.email}
               </a>
             </li>
             <li>Tallinn, Estonia</li>
           </ul>
         </div>
-        
+
         <div>
           <h4 className="font-serif font-medium mb-4">{t.nav.services}</h4>
           <ul className="space-y-2 text-sm text-muted-foreground">
@@ -142,9 +161,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <div className="min-h-screen flex flex-col bg-background font-sans text-foreground selection:bg-primary/10 selection:text-primary">
       <Header />
-      <main className="flex-1 pt-20">
-        {children}
-      </main>
+      <main className="flex-1 pt-20">{children}</main>
       <Footer />
     </div>
   );

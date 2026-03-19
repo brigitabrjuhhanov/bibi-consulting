@@ -15,10 +15,10 @@ export default function Contact() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1500));
-    
+
     toast.success("Message sent successfully!");
     setIsSubmitting(false);
     (e.target as HTMLFormElement).reset();
@@ -30,7 +30,7 @@ export default function Contact() {
         <div className="container max-w-6xl">
           <div className="grid lg:grid-cols-2 gap-16">
             {/* Contact Info */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               className="space-y-12"
@@ -51,7 +51,10 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-serif text-xl mb-2">Email</h3>
-                    <a href={`mailto:${t.contact.email}`} className="text-lg text-muted-foreground hover:text-primary transition-colors">
+                    <a
+                      href={`mailto:${t.contact.email}`}
+                      className="text-lg text-muted-foreground hover:text-primary transition-colors"
+                    >
                       {t.contact.email}
                     </a>
                   </div>
@@ -72,7 +75,7 @@ export default function Contact() {
             </motion.div>
 
             {/* Contact Form */}
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 0.2 }}
@@ -80,28 +83,50 @@ export default function Contact() {
             >
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <label htmlFor="name" className="text-sm font-medium text-foreground/80">
+                  <label
+                    htmlFor="name"
+                    className="text-sm font-medium text-foreground/80"
+                  >
                     {t.contact.form.name}
                   </label>
-                  <Input id="name" required className="h-12 bg-muted/30 border-border/50 focus:bg-white transition-colors" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="email" className="text-sm font-medium text-foreground/80">
-                    {t.contact.form.email}
-                  </label>
-                  <Input id="email" type="email" required className="h-12 bg-muted/30 border-border/50 focus:bg-white transition-colors" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label htmlFor="message" className="text-sm font-medium text-foreground/80">
-                    {t.contact.form.message}
-                  </label>
-                  <Textarea id="message" required className="min-h-[150px] bg-muted/30 border-border/50 focus:bg-white transition-colors resize-none" />
+                  <Input
+                    id="name"
+                    required
+                    className="h-12 bg-muted/30 border-border/50 focus:bg-white transition-colors"
+                  />
                 </div>
 
-                <Button 
-                  type="submit" 
+                <div className="space-y-2">
+                  <label
+                    htmlFor="email"
+                    className="text-sm font-medium text-foreground/80"
+                  >
+                    {t.contact.form.email}
+                  </label>
+                  <Input
+                    id="email"
+                    type="email"
+                    required
+                    className="h-12 bg-muted/30 border-border/50 focus:bg-white transition-colors"
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <label
+                    htmlFor="message"
+                    className="text-sm font-medium text-foreground/80"
+                  >
+                    {t.contact.form.message}
+                  </label>
+                  <Textarea
+                    id="message"
+                    required
+                    className="min-h-[150px] bg-muted/30 border-border/50 focus:bg-white transition-colors resize-none"
+                  />
+                </div>
+
+                <Button
+                  type="submit"
                   disabled={isSubmitting}
                   className="w-full h-12 rounded-full text-lg bg-primary text-primary-foreground hover:bg-primary/90"
                 >
