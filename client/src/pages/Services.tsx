@@ -20,8 +20,8 @@ export default function Services() {
         "Daily bookkeeping & VAT reporting",
         "Annual reports & Income statements",
         "Payroll management & Compliance",
-        "Financial health checks"
-      ]
+        "Financial health checks",
+      ],
     },
     {
       id: "it",
@@ -34,8 +34,8 @@ export default function Services() {
         "Product strategy & Roadmap",
         "MVP development support",
         "AI readiness consulting",
-        "Workflow automation"
-      ]
+        "Workflow automation",
+      ],
     },
     {
       id: "business",
@@ -48,9 +48,9 @@ export default function Services() {
         "Process redesign & Optimization",
         "Operational structure improvements",
         "Change management",
-        "Team leadership support"
-      ]
-    }
+        "Team leadership support",
+      ],
+    },
   ];
 
   return (
@@ -58,36 +58,36 @@ export default function Services() {
       <div className="bg-[#F8F8F8]">
         {/* Header */}
         <section className="pt-32 pb-20 container text-center">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-serif text-5xl md:text-6xl text-primary mb-6"
           >
             {t.services.title}
           </motion.h1>
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
             transition={{ delay: 0.2 }}
-            className="h-1 w-24 bg-secondary mx-auto rounded-full" 
+            className="h-1 w-24 bg-secondary mx-auto rounded-full"
           />
         </section>
 
         {/* Services List */}
         <div className="container pb-32 space-y-32">
           {services.map((service, index) => (
-            <motion.section 
+            <motion.section
               key={service.id}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
+              className={`grid lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? "lg:grid-flow-dense" : ""}`}
             >
-              <div className={index % 2 === 1 ? 'lg:col-start-2' : ''}>
+              <div className={index % 2 === 1 ? "lg:col-start-2" : ""}>
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl shadow-primary/5 group">
-                  <img 
-                    src={service.image} 
+                  <img
+                    src={service.image}
                     alt={service.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
@@ -95,22 +95,27 @@ export default function Services() {
                 </div>
               </div>
 
-              <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+              <div
+                className={`space-y-8 ${index % 2 === 1 ? "lg:col-start-1" : ""}`}
+              >
                 <div className="h-16 w-16 rounded-xl bg-white border border-border flex items-center justify-center text-primary shadow-sm">
                   <service.icon size={32} />
                 </div>
-                
-                <h2 className="font-serif text-4xl text-primary">{service.title}</h2>
+
+                <h2 className="font-serif text-4xl text-primary">
+                  {service.title}
+                </h2>
                 <p className="text-xl text-muted-foreground leading-relaxed">
                   {service.desc}
                 </p>
-                <p className="text-muted-foreground">
-                  {service.details}
-                </p>
+                <p className="text-muted-foreground">{service.details}</p>
 
                 <ul className="space-y-4 pt-4">
                   {service.features.map((feature, i) => (
-                    <li key={i} className="flex items-center gap-3 text-foreground/80">
+                    <li
+                      key={i}
+                      className="flex items-center gap-3 text-foreground/80"
+                    >
                       <div className="h-6 w-6 rounded-full bg-secondary/50 flex items-center justify-center text-primary shrink-0">
                         <Check size={14} />
                       </div>

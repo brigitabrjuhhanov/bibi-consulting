@@ -10,14 +10,14 @@ export default function About() {
       <div className="bg-[#F8F8F8] min-h-screen">
         {/* Hero */}
         <section className="pt-32 pb-20 container text-center max-w-4xl mx-auto">
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="font-serif text-5xl md:text-6xl text-primary mb-8"
           >
             {t.about.title}
           </motion.h1>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
@@ -29,22 +29,25 @@ export default function About() {
 
         {/* Image Section */}
         <section className="container pb-24">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
             className="relative aspect-[21/9] rounded-3xl overflow-hidden shadow-2xl shadow-primary/5"
           >
-            <img 
-              src="/images/partnership_about.png" 
-              alt="BiBi Consulting Team" 
+            <img
+              src="/images/partnership_about.png"
+              alt="BiBi Consulting Team"
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/40 to-transparent mix-blend-multiply" />
             <div className="absolute bottom-0 left-0 right-0 p-8 md:p-16 text-white">
-              <h2 className="font-serif text-3xl md:text-4xl mb-4">{t.about.subtitle}</h2>
+              <h2 className="font-serif text-3xl md:text-4xl mb-4">
+                {t.about.subtitle}
+              </h2>
               <p className="text-white/90 text-lg max-w-2xl">
-                Combining traditional financial wisdom with modern digital innovation.
+                Combining traditional financial wisdom with modern digital
+                innovation.
               </p>
             </div>
           </motion.div>
@@ -65,7 +68,9 @@ export default function About() {
                 <div className="h-12 w-12 rounded-full bg-secondary/30 flex items-center justify-center text-primary mb-6 font-serif text-xl font-bold">
                   {index + 1}
                 </div>
-                <h3 className="font-serif text-2xl text-primary mb-4">{value}</h3>
+                <h3 className="font-serif text-2xl text-primary mb-4">
+                  {value}
+                </h3>
                 <div className="h-1 w-12 bg-secondary rounded-full" />
               </motion.div>
             ))}
